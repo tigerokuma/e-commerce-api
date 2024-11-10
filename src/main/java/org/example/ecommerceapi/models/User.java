@@ -1,35 +1,25 @@
 package org.example.ecommerceapi.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import java.util.List;
 
 @Entity
+@Table(name = "users") // Rename the table to avoid conflict with reserved keyword
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull
-    @Size(min = 4, max = 20)
     private String username;
 
     @NotNull
-    @Size(min = 8)
-    private String password;
-
-    @NotNull
-    @Email
     private String email;
 
     @NotNull
-    private String role;
+    private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    private String role;
 
     public int getId() {
         return id;
@@ -47,20 +37,20 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getRole() {
@@ -71,11 +61,14 @@ public class User {
         this.role = role;
     }
 
-    public List<Order> getOrders() {
-        return orders;
-    }
+    // Default constructor
+    public User(){};
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public User(int id, String username, String email, String password, String role) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 }

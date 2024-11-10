@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Table(name = "orders") // Rename the table to avoid conflict with the reserved keyword
 public class Order {
 
     @Id
