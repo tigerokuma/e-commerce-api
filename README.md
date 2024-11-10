@@ -2,6 +2,7 @@
 
 Welcome to the E-Shop E-commerce API! This API serves as the backend for a fictional e-commerce application. It provides endpoints for managing products, orders, and user accounts, and enables a front-end application to display a catalog of items, manage a shopping cart, and handle user interactions.
 
+![Image](Capture-2024-11-10-013133.png)
 
 ## Features
 
