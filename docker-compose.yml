@@ -1,6 +1,8 @@
 services:
   app:
-    build: .
+    build:
+      context: ./backend  # Specify the backend folder as the build context
+      dockerfile: ../Dockerfile  # Specify the path to Dockerfile in the root
     ports:
       - "8080:8080"
     depends_on:
