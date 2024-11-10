@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the project’s build jar to the container
-COPY target/e-commerce-api-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/e-commerce-api-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application's port
 EXPOSE 8080
